@@ -1,0 +1,79 @@
+// variables
+
+$color-primary-cyberYellow: hsl(56, 96%, 48%);
+$color-primary-cyberPurple: hsl(237, 49%, 51%);
+$color-primary-cyberWhite: hsl(213, 23%, 92%);
+$color-primary-cyberLightBlue: hsl(187, 97%, 49%) ;
+$color-primary-cyberRed: hsl(346, 100%, 50%);
+
+
+// general
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary-cyberWhite;
+
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  .cyberpunk__button__container:last-child {
+    margin-top: 3em;
+  }
+
+  .cyberpunk__button__container {
+    position: relative;
+  }
+}
+
+
+.cyberpunk__button {
+  border-radius: 0;
+  border: none;
+  outline: none;
+  width: 420px;
+  height: 100px;
+  border-right: 5px solid $color-primary-cyberLightBlue;
+
+  .cyberpunk__button__display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-primary-cyberWhite;
+    letter-spacing: 3px;
+  }
+}
+
+.cyberpunk__button__container::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 15%;
+  height: 50%;
+  bottom: 20%;
+  left: 0;
+  transform: rotate(40deg) translateY(100%) translateX(10px);
+  background-color: $color-primary-cyberWhite;
+}
+
+
+.cyberpunk__button-top {
+    background-color: $color-primary-cyberRed;
+}
+
+.cyberpunk__button-bottom {
+  background-color: $color-primary-cyberPurple;
+}

@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6eaef;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+main .cyberpunk__button__container:last-child {
+  margin-top: 3em;
+}
+main .cyberpunk__button__container {
+  position: relative;
+}
+
+.cyberpunk__button {
+  border-radius: 0;
+  border: none;
+  outline: none;
+  width: 420px;
+  height: 100px;
+  border-right: 5px solid #04daf6;
+}
+.cyberpunk__button .cyberpunk__button__display {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e6eaef;
+  letter-spacing: 3px;
+}
+
+.cyberpunk__button__container::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 15%;
+  height: 50%;
+  bottom: 20%;
+  left: 0;
+  transform: rotate(40deg) translateY(100%) translateX(10px);
+  background-color: #e6eaef;
+}
+
+.cyberpunk__button-top {
+  background-color: #ff003c;
+}
+
+.cyberpunk__button-bottom {
+  background-color: #454bbf;
+}
+
+/*# sourceMappingURL=style.css.map */
