@@ -11,7 +11,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e6eaef;
+  font-family: monospace;
+  background-image: url("public/IMAGES/cyber_image.jpeg");
+  background-position: center;
+  background-size: cover;
 }
 
 main {
@@ -20,45 +23,57 @@ main {
   justify-content: space-between;
 }
 main .cyberpunk__button__container:last-child {
-  margin-top: 3em;
+  margin-top: 4em;
 }
-main .cyberpunk__button__container {
+
+.cyberpunk__button__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  width: 420px;
+  height: 100px;
 }
 
 .cyberpunk__button {
-  border-radius: 0;
-  border: none;
+  border: 0;
   outline: none;
-  width: 420px;
-  height: 100px;
-  border-right: 5px solid #04daf6;
-}
-.cyberpunk__button .cyberpunk__button__display {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e6eaef;
+  background: transparent;
+  font-size: 1.5rem;
   letter-spacing: 3px;
+  font-weight: 700;
+  color: #e6eaef;
 }
-
-.cyberpunk__button__container::before {
-  content: "";
-  display: inline-block;
+.cyberpunk__button .cyberpunk__button__tag {
   position: absolute;
-  width: 15%;
-  height: 50%;
-  bottom: 20%;
+  bottom: -6%;
+  right: 6%;
+  background-color: #f0e005;
+  color: #2a2828;
+  font-size: 0.75rem;
+  padding: 1px 4px;
+}
+
+.cyberpunk__button::before,
+.cyberpunk__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
   left: 0;
-  transform: rotate(40deg) translateY(100%) translateX(10px);
-  background-color: #e6eaef;
+  right: 0;
+  bottom: 0;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 94% 100%, 94% 82%, 83% 82%, 83% 100%, 9% 100%, 0 62%, 0 1%);
+  clip-path: polygon(100% 0, 100% 100%, 94% 100%, 94% 89%, 83% 89%, 83% 100%, 9% 100%, 0 62%, 0 1%);
+  z-index: -1;
 }
 
-.cyberpunk__button-top {
-  background-color: #ff003c;
+.cyberpunk__button::before {
+  background: #04daf6;
+  transform: translate(5px, 0);
 }
 
-.cyberpunk__button-bottom {
-  background-color: #454bbf;
+.cyberpunk__button::after {
+  background: #ff003c;
 }
 
 /*# sourceMappingURL=style.css.map */
