@@ -3,6 +3,7 @@
 //TODO : 
 
 $color-primary-cyberYellow: hsl(56, 96%, 48%);
+$color-primary-cyberDullYellow: hsl(56, 76%, 64%);
 $color-primary-cyberPurple: hsl(237, 49%, 51%);
 $color-primary-cyberWhite: hsl(213, 23%, 92%);
 $color-primary-cyberLightBlue: hsl(187, 97%, 49%) ;
@@ -25,7 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: monospace;
-  background-image: url("public/IMAGES/cyber_image.jpeg");
+  background: url(public/IMAGES/cyber_image.jpeg) $color-primary-cyberYellow;
   background-position: center;
   background-size: cover;
 }
@@ -58,6 +59,8 @@ main {
   font-size: 1.5rem;
   letter-spacing: 3px;
   font-weight: 700;
+  width: inherit;
+  height: inherit;
   color: $color-primary-cyberWhite;
 
   .cyberpunk__button__tag {
@@ -70,6 +73,32 @@ main {
     padding: 1px 4px;
   }
 
+  .cyberpunk__button-glitch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    background: $color-primary-cyberLightBlue;
+    text-shadow: 2px 2px $color-primary-cyberYellow, -2px -2px $color-primary-cyberDullYellow;
+    text-transform: uppercase;
+    clip-path: polygon(100% 0, 100% 100%, 94% 100%, 94% 89%, 83% 89%, 83% 100%, 9% 100%, 0 62%, 0 1%);
+
+    //animation: punk 2s infinite;
+  }
+
+}
+
+.cyberpunk__button:hover .cyberpunk__button-glitch {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cyberpunk__button::before,
