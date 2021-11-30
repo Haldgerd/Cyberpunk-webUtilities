@@ -3,13 +3,6 @@
 //TODO : 
 
 
-@font-face {
-  font-family: 'jls_data_gothiccregular';
-  src: url('../fonts/jlsdatagothiccnc-yyz3-webfont.   woff2') format('woff2'),
-       url('../fonts/jlsdatagothiccnc-yyz3-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 
 $color-primary-cyberYellow: hsl(56, 96%, 48%);
@@ -87,18 +80,19 @@ main {
   line-height: 75px;
   transition: background 0.2s;
 
-  .cyberpunk__button__tag {
-    position: absolute;
-    padding: 1px 4px;
-    letter-spacing: 1px;
-    line-height: 1;
-    bottom: -5%;
-    right: 5%;
-    font-weight: normal;
-    color: hsl(0, 0%, 0%);
-    font-size: $label-size;
-  }
-  
+
+}
+
+.cyberpunk__button__tag {
+  position: absolute;
+  padding: 1px 4px;
+  letter-spacing: 1px;
+  line-height: 1;
+  bottom: -5%;
+  right: 5%;
+  font-weight: normal;
+  color: hsl(0, 0%, 0%);
+  font-size: $label-size;
 }
 
 
@@ -112,8 +106,8 @@ main {
 }
 
 
-.cyberpunk__button:after,
-.cyberpunk__button:before {
+.cyberpunk__button::after,
+.cyberpunk__button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -125,14 +119,14 @@ main {
 }
 
 
-.cyberpunk__button:before {
-  background: $color-primary-cyberLightBlue;
+.cyberpunk__button::before {
+  background: $shadow-primary;
   transform: translate($border, 0);
 }
 
 
-.cyberpunk__button:after {
-  background: $color-primary-cyberRed;
+.cyberpunk__button::after {
+  background: $primary;
 }
 
 
@@ -143,7 +137,7 @@ main {
   right: calc($border * -1);
   bottom: calc($border * -1);
   background: $shadow-primary;
-  text-shadow: 1px 1px $shadow-primary -2px -2px $shadow-secondary;
+  text-shadow: 2px 2px $shadow-primary -2px -2px $shadow-secondary;
   clip-path: $clip;
   animation: glitch 2s infinite;
   display: none;
@@ -153,7 +147,7 @@ main {
   display: block;
 }
 
-.cyberpunk__button-glitch:before {
+.cyberpunk__button-glitch::before {
   content: '';
   position: absolute;
   top: calc($border * 1);
@@ -186,7 +180,7 @@ main {
   }
   10%{
     clip-path: $clip-three;
-    transform: translate(calc(var($shimmy-distance) * 1%), 0);
+    transform: translate(calc($shimmy-distance * 1%), 0);
   }
   13%{
     clip-path: $clip-three;
@@ -194,23 +188,23 @@ main {
   }
   14%, 21%{
     clip-path: $clip-four;
-    transform: translate(calc(var($shimmy-distance) * 1%), 0);
+    transform: translate(calc($shimmy-distance * 1%), 0);
   }
   25%{
     clip-path: $clip-five;
-    transform: translate(calc(var($shimmy-distance) * 1%), 0);
+    transform: translate(calc($shimmy-distance * 1%), 0);
   }
   30%{
     clip-path: $clip-five;
-    transform: translate(calc(var($shimmy-distance) * -1%), 0);
+    transform: translate(calc($shimmy-distance * -1%), 0);
   }
   35%, 45%{
     clip-path: $clip-six;
-    transform: translate(calc(var($shimmy-distance) * -1%));
+    transform: translate(calc($shimmy-distance * -1%));
   }
   40%{
     clip-path: $clip-six;
-    transform: translate(calc(var($shimmy-distance) * 1%));
+    transform: translate(calc($shimmy-distance * 1%));
   }
   50%{
     clip-path: $clip-six;
@@ -234,3 +228,7 @@ main {
 // .cybr-btn:nth-of-type(2) {
 //   --primary-hue: 260;
 // }
+
+.cyberpunk__button:nth-of-type(2) {
+  $primary-hue: 260;
+}
