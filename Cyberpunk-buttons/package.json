@@ -13,5 +13,8 @@
     "glitch"
   ],
   "author": "Lorna",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "url-loader": "^4.1.1"
+  }
 }

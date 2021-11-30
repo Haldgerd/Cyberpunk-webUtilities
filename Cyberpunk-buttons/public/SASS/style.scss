@@ -2,6 +2,16 @@
 //TODO : refactoring and optimization!! Create partials and mixings also extensions
 //TODO : 
 
+
+@font-face {
+  font-family: 'jls_data_gothiccregular';
+  src: url('../fonts/jlsdatagothiccnc-yyz3-webfont.   woff2') format('woff2'),
+       url('../fonts/jlsdatagothiccnc-yyz3-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 $color-primary-cyberYellow: hsl(56, 96%, 48%);
 $color-primary-cyberDullYellow: hsl(56, 76%, 64%);
 $color-primary-cyberPurple: hsl(237, 49%, 51%);
@@ -9,6 +19,26 @@ $color-primary-cyberWhite: hsl(213, 23%, 92%);
 $color-primary-cyberLightBlue: hsl(187, 97%, 49%) ;
 $color-primary-cyberRed: hsl(346, 100%, 50%);
 
+$color: hsl(0, 0%, 100%);
+$font-size: 26px;
+$shadow-primary-hue: 180;
+$label-size: 9px;
+$shadow-secondary-hue: 60;
+$primary-lightness: 50;
+$primary-hue: 0;
+$primary: hsl($primary-hue, 85%, calc(var($primary-lightness, 50)  * 1%));
+$shadow-primary: hsl($shadow-primary-hue, 90%, 50%);
+$shadow-secondary: hsl($shadow-secondary-hue, 90%, 60%);
+$clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%,95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+$border: 4px;
+$shimmy-distance: 5;
+$clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95%95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+$clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95%100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+$clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95%54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+$clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0%,95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+$clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0%,95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+$clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95%85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+$clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95%80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
 
 // general
 
@@ -26,9 +56,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: monospace;
-  background: url(public/IMAGES/cyber_image.jpeg) $color-primary-cyberYellow;
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(90deg, #f5ed00 70%, #e6de00 70%), #fff700;
 }
 
 main {
@@ -43,88 +71,166 @@ main {
 
 }
 
-.cyberpunk__button__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 420px;
-  height: 100px;
-}
-
 .cyberpunk__button {
-  border: 0;
-  outline: none;
+  color: $color;
+  cursor: pointer;
   background: transparent;
-  font-size: 1.5rem;
-  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: $font-size;
+  outline: transparent;
+  letter-spacing: 2px;
+  position: relative;
   font-weight: 700;
-  width: inherit;
-  height: inherit;
-  color: $color-primary-cyberWhite;
+  border: 0;
+  min-width: 300px;
+  height: 75px;
+  line-height: 75px;
+  transition: background 0.2s;
 
   .cyberpunk__button__tag {
     position: absolute;
-    bottom: -6%;
-    right: 6%;
-    background-color: $color-primary-cyberYellow;
-    color: hsl(0, 3%, 16%);
-    font-size: .75rem;
     padding: 1px 4px;
+    letter-spacing: 1px;
+    line-height: 1;
+    bottom: -5%;
+    right: 5%;
+    font-weight: normal;
+    color: hsl(0, 0%, 0%);
+    font-size: $label-size;
   }
-
-  .cyberpunk__button-glitch {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: none;
-    background: $color-primary-cyberLightBlue;
-    text-shadow: 2px 2px $color-primary-cyberYellow, -2px -2px $color-primary-cyberDullYellow;
-    text-transform: uppercase;
-    clip-path: polygon(100% 0, 100% 100%, 94% 100%, 94% 89%, 83% 89%, 83% 100%, 9% 100%, 0 62%, 0 1%);
-
-    //animation: punk 2s infinite;
-  }
-
-}
-
-.cyberpunk__button:hover .cyberpunk__button-glitch {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
   
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.cyberpunk__button::before,
-.cyberpunk__button::after {
-  content: "";
+
+.cyberpunk__button:hover {
+  background-color: hsl($primary-hue, 85%, calc(var($primary-lightness, 50) * 0.8%));
+}
+
+
+.cyberpunk__button:active {
+  background-color: hsl($primary-hue, 85%, calc(var($primary-lightness, 50) * 0.6%));
+}
+
+
+.cyberpunk__button:after,
+.cyberpunk__button:before {
+  content: '';
   position: absolute;
-  top: 0; // to make this clip path work use all four position properties. !important
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 94% 100%, 94% 82%, 83% 82%, 83% 100%, 9% 100%, 0 62%, 0 1%); 
-  clip-path: polygon(100% 0, 100% 100%, 94% 100%, 94% 89%, 83% 89%, 83% 100%, 9% 100%, 0 62%, 0 1%);
+  clip-path: $clip;
   z-index: -1;
 }
 
-.cyberpunk__button::before {
+
+.cyberpunk__button:before {
   background: $color-primary-cyberLightBlue;
-  transform: translate(5px, 0);
+  transform: translate($border, 0);
 }
 
-.cyberpunk__button::after {
+
+.cyberpunk__button:after {
   background: $color-primary-cyberRed;
 }
 
 
+.cyberpunk__button-glitch {
+  position: absolute;
+  top: calc($border * -1);
+  left: calc($border * -1);
+  right: calc($border * -1);
+  bottom: calc($border * -1);
+  background: $shadow-primary;
+  text-shadow: 1px 1px $shadow-primary -2px -2px $shadow-secondary;
+  clip-path: $clip;
+  animation: glitch 2s infinite;
+  display: none;
+}
+
+.cyberpunk__button:hover .cyberpunk__button-glitch {
+  display: block;
+}
+
+.cyberpunk__button-glitch:before {
+  content: '';
+  position: absolute;
+  top: calc($border * 1);
+  right: calc($border * 1);
+  bottom: calc($border * 1);
+  left: calc($border * 1);
+  clip-path: $clip;
+  background: $primary;
+  z-index: -1;
+}
 
 
 
+@keyframes glitch {
+  0% {
+    clip-path: $clip-one;
+  }
+  2%, 8%{
+    clip-path: $clip-two;
+    transform: translate(calc($shimmy-distance * -1%), 0);
+  }
+  6% {
+    clip-path: $clip-two;
+    transform: translate(calc($shimmy-distance * 1%)), 0;
+  }
 
+  9%{
+    clip-path: $clip-two;
+    transform: translate(0, 0);
+  }
+  10%{
+    clip-path: $clip-three;
+    transform: translate(calc(var($shimmy-distance) * 1%), 0);
+  }
+  13%{
+    clip-path: $clip-three;
+    transform: translate(0, 0);
+  }
+  14%, 21%{
+    clip-path: $clip-four;
+    transform: translate(calc(var($shimmy-distance) * 1%), 0);
+  }
+  25%{
+    clip-path: $clip-five;
+    transform: translate(calc(var($shimmy-distance) * 1%), 0);
+  }
+  30%{
+    clip-path: $clip-five;
+    transform: translate(calc(var($shimmy-distance) * -1%), 0);
+  }
+  35%, 45%{
+    clip-path: $clip-six;
+    transform: translate(calc(var($shimmy-distance) * -1%));
+  }
+  40%{
+    clip-path: $clip-six;
+    transform: translate(calc(var($shimmy-distance) * 1%));
+  }
+  50%{
+    clip-path: $clip-six;
+    transform: translate(0, 0);
+  }
+  55%{
+    clip-path: $clip-seven;
+    transform: translate(calc($shimmy-distance * 1%), 0);
+  }
+  60%{
+    clip-path: $clip-seven;
+    transform: translate(0, 0);
+  }
+  31%, 61%, 100%{
+    clip-path: $clip-four;
+  }
+
+}
+
+
+// .cybr-btn:nth-of-type(2) {
+//   --primary-hue: 260;
+// }
