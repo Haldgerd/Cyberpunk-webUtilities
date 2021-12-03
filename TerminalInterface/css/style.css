@@ -1,17 +1,132 @@
-/* Error: Undefined variable.
- *    ,
- * 24 |   border: 3px solid $color-primary-DarkTerminal;
- *    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   scss/style.scss 24:21  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 24 \2502    border: 3px solid $color-primary-DarkTerminal;\a    \2502                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss/style.scss 24:21  root stylesheet";
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background-color: black;
+  font-family: "Share Tech Mono", monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body h1 {
+  padding: 0 0.75em;
+  background-color: rgba(21, 41, 31, 0.8);
+  border: 3px solid rgba(21, 41, 31, 0.8);
+  margin-bottom: 1em;
+}
+body .main__container {
+  position: relative;
+  padding: 1.9em 2.4em;
+  max-width: 900px;
+  min-height: 50vh;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0 0.5em;
+  color: #78ce6f;
+  background-color: #121c14;
+  background-image: linear-gradient(transparent 50%, rgba(11, 17, 9, 0.1) 50%), radial-gradient(transparent 65%, rgba(2, 9, 1, 0.6) 100%);
+}
+body .main__container::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  /*  */
+  top: 0;
+  opacity: 0.5;
+  transform: translate3D(0, 0, 0);
+  width: 100%;
+  height: 120px;
+  mix-blend-mode: screen;
+  background-color: rgba(2, 9, 1, 0.6);
+  background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%), linear-gradient(to top, #050f05, rgba(0, 0, 0, 0) 110%);
+  background-size: 15px 15px, 100%;
+  animation: scan 2.5s linear infinite, blink 0.6s infinite;
+}
+body .block {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  background-size: 100 100;
+  animation: noise 240ms infinite;
+  background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.7;
+  }
+  15% {
+    opacity: 0.4;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  23% {
+    opacity: 0.3;
+  }
+  27% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  61% {
+    opacity: 0.8;
+  }
+  62% {
+    opacity: 0.6;
+  }
+  67% {
+    opacity: 0.7;
+  }
+  69% {
+    opacity: 0.4;
+  }
+  77% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+@keyframes scan {
+  0% {
+    transform: translate3D(0, -100px, 0);
+  }
+  100% {
+    transform: translate3D(0, 600px, 0);
+  }
+}
+@keyframes noise {
+  0% {
+    background-image: url(http://api.thumbr.it/whitenoise-200x200.png?background=0a2406ff&noise=142238&density=85&opacity=100);
+  }
+  33% {
+    background-image: url(http://api.thumbr.it/whitenoise-210x200.png?background=0a2406ff&noise=182235&density=85&opacity=100);
+  }
+  66% {
+    background-image: url(http://api.thumbr.it/whitenoise-200x190.png?background=0a2406ff&noise=142248&density=85&opacity=100);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

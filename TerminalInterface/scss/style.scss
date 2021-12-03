@@ -14,51 +14,54 @@
 
 
 body {
-  // background-color: $h1-backgroundColor;
-  // font-family: $ff-secondary;
+  background-color: variables.$color-primary-justBlack;
+  font-family: fonts.$ff-secondary;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
   h1 {
-  // padding: $h1-padding;
-  // background-color: $color-primary-DarkTerminal;
-  border: 3px solid $color-primary-DarkTerminal;
+  padding: variables.$h1-padding;
+  background-color: variables.$color-primary-DarkTerminal;
+  border: 3px solid variables.$color-primary-DarkTerminal;
+  margin-bottom: 1em;
   }
 
   .main__container {
     position: relative;
-    padding: $container-padding;
-    max-width: 780px;
-    margin: 0 auto;
-    min-height: 70vh;
-    // overflow: hidden;
-    font-size: $fs-secondary;
+    padding: variables.$container-padding;
+    max-width: 900px;
+    min-height: 50vh;
+    overflow: hidden;
+    font-size: fonts.$fs-secondary;
     line-height: 1.9;
     margin: 0 0.5em;
-    color: $color-primary-lightTerminal;
-    background-color: $color-primary-uberDarkTerminal;
-    // background-image: $bg-image;
-    // background-size: 15px, 100%;
+    color: variables.$color-primary-lightTerminal;
+    background-color: variables.$color-primary-uberDarkTerminal;
+    background-image: variables.$container-bg-image;
   }  
 
 
-
-  // .main__container::after {
-  // content: " ";
-  // position: absolute;
-  // left: 0;
-  // top: 0;
-  // opacity: 1;
-  // // transform: translate3D(0, 0, 0);
-  // width: 100vw;
-  // height: 120px;
-  // // mix-blend-mode: screen;
-  // background-color:$color-primary-alienTerminal;
-  // // background-image: linear-gradient(transparent 50%, rgba($color-primary-justBlack, .5) 50%), linear-gradient(to top, $color-primary-strangeTerminal, rgba($color-primary-justBlack, 0) 110%);
-  // // background-size: 15px 15px, 100%;
+// 
+  .main__container::after {
+  content: " ";
+  position: absolute;
+  left: 0;/*  */
+  top: 0;
+  opacity: 0.5;
+  transform: translate3D(0, 0, 0);
+  width: 100%;
+  height: 120px;
+  mix-blend-mode: screen;
+  background-color: variables.$color-primary-alienTerminal;
+  background-image: linear-gradient(transparent 50%, rgba(variables.$color-primary-justBlack, .5) 50%), linear-gradient(to top, variables.$color-primary-strangeTerminal, rgba(variables.$color-primary-justBlack, 0) 110%);
+  background-size: 15px 15px, 100%;
   
-  // // animation: scan 2.5s linear infinite, blink 0.6s infinite;
+  animation: scan 2.5s linear infinite, blink 0.6s infinite;
  
-  // }
+  }
 
   .block {
   position: absolute;
@@ -67,10 +70,10 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  // mix-blend-mode: screen;
+  mix-blend-mode: screen;
   opacity: 0.65;
   background-size: 100 100;
-  // animation: noise 240ms infinite;
+  animation: noise 240ms infinite;
   background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
   }
 
@@ -123,6 +126,13 @@ body {
   100%  {
   opacity: 0.7 } 
 }
+
+  
+@keyframes scan { 
+  0% {transform: translate3D(0, -100px, 0)}
+
+  100% {transform: translate3D(0, 600px, 0)}
+} 
 
 
 
