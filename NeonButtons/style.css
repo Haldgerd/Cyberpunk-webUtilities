@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+body main {
+  min-height: inherit;
+}
+
+.square__element {
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+  animation: moving 3s linear 3 alternate forwards;
+  clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+}
+
+@keyframes moving {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(100px, 0);
+  }
+  25% {
+    transform: translate(100px, 100px);
+  }
+  50% {
+    transform: translate(500px, 100px);
+  }
+  75% {
+    transform: translate(500px, 100px) rotate(180deg);
+  }
+  100% {
+    transform: translate(500px, 0) rotate(180deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
