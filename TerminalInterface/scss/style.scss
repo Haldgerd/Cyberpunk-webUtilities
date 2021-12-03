@@ -19,11 +19,11 @@ body {
 
   .main__container {
     position: relative;
-    padding: 30px 40px;
+    padding: $container-padding;
     max-width: 780px;
     margin: 0 auto;
     min-height: 70vh;
-    overflow: hidden;
+    // overflow: hidden;
     font-size: $fs-secondary;
     line-height: 1.9;
     margin: 0 0.5em;
@@ -47,7 +47,7 @@ body {
   // mix-blend-mode: screen;
   background-color:$color-primary-alienTerminal;
   // background-image: linear-gradient(transparent 50%, rgba($color-primary-justBlack, .5) 50%), linear-gradient(to top, $color-primary-strangeTerminal, rgba($color-primary-justBlack, 0) 110%);
-  background-size: 15px 15px, 100%;
+  // background-size: 15px 15px, 100%;
   
   // animation: scan 2.5s linear infinite, blink 0.6s infinite;
  
@@ -66,7 +66,7 @@ body {
   // animation: noise 240ms infinite;
   background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
   }
-  
+
 }
 
 
