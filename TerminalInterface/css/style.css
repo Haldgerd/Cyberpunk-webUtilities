@@ -61,8 +61,8 @@ body .block {
   mix-blend-mode: screen;
   opacity: 0.65;
   background-size: 100 100;
-  animation: noise 240ms infinite;
-  background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
+  animation: flicker 240ms infinite;
+  background: repeating-linear-gradient(rgba(10, 27, 41, 0.3) 1px, rgba(10, 27, 41, 0.1) 2px, rgba(0, 0, 0, 0) 5px);
 }
 
 @keyframes blink {
@@ -117,15 +117,15 @@ body .block {
     transform: translate3D(0, 600px, 0);
   }
 }
-@keyframes noise {
+@keyframes flicker {
   0% {
-    background-image: url(http://api.thumbr.it/whitenoise-200x200.png?background=0a2406ff&noise=142238&density=85&opacity=100);
+    transform: translateY(1px);
   }
-  33% {
-    background-image: url(http://api.thumbr.it/whitenoise-210x200.png?background=0a2406ff&noise=182235&density=85&opacity=100);
+  50% {
+    transform: translateY(0px);
   }
-  66% {
-    background-image: url(http://api.thumbr.it/whitenoise-200x190.png?background=0a2406ff&noise=142248&density=85&opacity=100);
+  100% {
+    transform: translateY(1px);
   }
 }
 
