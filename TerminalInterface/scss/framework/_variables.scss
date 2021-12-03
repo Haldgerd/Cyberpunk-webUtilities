@@ -1,11 +1,23 @@
 
-// color variables
+// color variables -palette
+$color-primary-terminalGreen: hsl(120, 80%, 27%);
+$color-primary-terminalBlack: hsl(120, 2%, 18%);
+$color-primary-DarkTerminal: hsla(150, 33%, 12%, 0.8); //#60C060 
+$color-primary-lightTerminal: hsl(114, 49%, 62%);
+$color-primary-uberDarkTerminal: hsl(133, 20%, 9%);
+$color-primary-transparentGreen: hsla(103, 30%, 5%, 0.1);
+$color-primary-alienTerminal: hsla(113, 82%, 2%, 0.6) ;
+$color-primary-strangeTerminal: hsl(120, 50%, 4%);
+$color-primary-justBlack: hsl(0, 0%, 0%);
 
-$color-primary-terminalGreen: green;
-$color-primary-terminalGreen: green;
-$color-primary-terminalGreen: green;
-$color-primary-terminalGreen: green;
-$color-primary-terminalGreen: green;
 
+//margins, paddings
 
-//
+//h1
+$h1-border: 3px solid $color-primary-DarkTerminal;
+$h1-backgroundColor: $color-primary-terminalBlack;
+$h1-padding: 0 0.75em;
+
+// container
+$container-bg-image: linear-gradient(transparent 50%, $color-primary-transparentGreen 50%), radial-gradient(transparent 65%, $color-primary-alienTerminal 100%);
+$container-padding: 1.9em 2.4em;
